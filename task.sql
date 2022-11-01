@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 01, 2022 at 10:13 AM
+-- Generation Time: Nov 01, 2022 at 10:55 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `created_at` timestamp(6) NOT NULL,
   `updated_at` timestamp(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `courses`
@@ -45,7 +45,8 @@ INSERT INTO `courses` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (3, 'French', '2022-10-29 23:06:09.000000', '2022-10-29 23:06:09.000000'),
 (4, 'ICDL', '2022-10-29 23:06:23.000000', '2022-10-29 23:06:23.000000'),
 (5, 'Communication Skills', '2022-10-29 23:06:59.000000', '2022-10-29 23:06:59.000000'),
-(6, 'db1', '2022-10-31 22:21:49.000000', '2022-10-31 22:21:49.000000');
+(6, 'db1', '2022-10-31 22:21:49.000000', '2022-10-31 22:21:49.000000'),
+(7, 'db2', '2022-11-01 08:32:19.000000', '2022-11-01 08:32:19.000000');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `course_teacher` (
   PRIMARY KEY (`id`),
   KEY `test` (`id_course`),
   KEY `test2` (`id_teacher`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `course_teacher`
@@ -168,7 +169,11 @@ INSERT INTO `oauth_access_tokens` (`id`, `user_id`, `client_id`, `name`, `scopes
 ('b67df508e02dd7f5021a4bfaa6f07b05555f5563c769825b40e38aeeef5bebe74cebd22b41f8f379', 4, 1, 'MyApp', '[]', 0, '2022-10-30 01:22:45', '2022-10-30 01:22:45', '2023-10-30 03:22:45'),
 ('a948c2a4c713e3c27487c59a9ededbc2b9ed6695d4594f48cfe05270e59a06189f29b5f2080908d4', 5, 1, 'MyApp', '[]', 0, '2022-10-31 22:18:23', '2022-10-31 22:18:23', '2023-11-01 00:18:23'),
 ('783129b690aee84a23479192457279c819a0823155ed32936e75b15765e621f0f936ba845d25eed8', 6, 1, 'MyApp', '[]', 0, '2022-10-31 22:21:49', '2022-10-31 22:21:49', '2023-11-01 00:21:49'),
-('2c816ef698c27fbc4669afb2e8b45dcdfc7465cbbeb99323d9cc0b455134a565b581a935f6bd17f6', 6, 1, 'MyApp', '[]', 0, '2022-10-31 22:22:18', '2022-10-31 22:22:18', '2023-11-01 00:22:18');
+('2c816ef698c27fbc4669afb2e8b45dcdfc7465cbbeb99323d9cc0b455134a565b581a935f6bd17f6', 6, 1, 'MyApp', '[]', 0, '2022-10-31 22:22:18', '2022-10-31 22:22:18', '2023-11-01 00:22:18'),
+('611e99656d4406b9ffa7ac0584ecf1af7345773c3e6873854f35bc9f7d6b3fb5f406ce17b2b4eb98', 7, 1, 'MyApp', '[]', 0, '2022-11-01 08:32:19', '2022-11-01 08:32:19', '2023-11-01 10:32:19'),
+('42c108460a7753e08b8e4d578df17acb5e0407a0f640f2111a5aba825c826b7680a8b531c29ae5f4', 7, 1, 'MyApp', '[]', 0, '2022-11-01 08:33:17', '2022-11-01 08:33:17', '2023-11-01 10:33:17'),
+('0dbddf18a4dd0651d81d9600d663ab6b119d89fad9330390dd44e3f119e09a2baafbfcaffaaa3442', 8, 1, 'MyApp', '[]', 0, '2022-11-01 08:34:22', '2022-11-01 08:34:22', '2023-11-01 10:34:22'),
+('959fd477961c0e35198bbac2e168d8de3cb8ef2bc7a85848390f93be3980c37610de0161aec26940', 6, 1, 'MyApp', '[]', 0, '2022-11-01 08:37:06', '2022-11-01 08:37:06', '2023-11-01 10:37:06');
 
 -- --------------------------------------------------------
 
@@ -309,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `registration` (
   PRIMARY KEY (`id`),
   KEY `st` (`id_student`),
   KEY `tr` (`id_course_teacher`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `registration`
@@ -318,7 +323,8 @@ CREATE TABLE IF NOT EXISTS `registration` (
 INSERT INTO `registration` (`id`, `id_student`, `id_course_teacher`, `created_at`, `updated_at`) VALUES
 (2, 4, 3, '2022-10-30 01:22:55.000000', '2022-10-30 01:22:55.000000'),
 (3, 3, 6, '2022-10-30 10:23:02.000000', '2022-10-30 10:23:02.000000'),
-(4, 5, 3, '2022-10-31 22:25:29.000000', '2022-10-31 22:25:29.000000');
+(5, 6, 8, '2022-11-01 08:40:07.000000', '2022-11-01 08:40:07.000000'),
+(6, 5, 2, '2022-11-01 08:43:41.000000', '2022-11-01 08:43:41.000000');
 
 -- --------------------------------------------------------
 
@@ -335,7 +341,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `created_at` timestamp(6) NOT NULL,
   `updated_at` timestamp(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `student`
@@ -344,7 +350,8 @@ CREATE TABLE IF NOT EXISTS `student` (
 INSERT INTO `student` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
 (3, 'ahmed', 'ahmed@gmail.com', '', '2022-10-30 00:46:58.000000', '2022-10-30 00:46:58.000000'),
 (4, 'alaa', 'alaa@gmail.com', '123', '2022-10-30 01:22:45.000000', '2022-10-30 01:22:45.000000'),
-(5, 'alaa', 'ahmed@gmail.comm', '$2y$10$cD.Lr2AEZCR6K2ZfysmhaOO60flJNDeDnS/317iIq6Uy7e8J8LfaC', '2022-10-31 22:18:20.000000', '2022-10-31 22:18:20.000000');
+(5, 'alaa', 'ahmed@gmail.comm', '$2y$10$cD.Lr2AEZCR6K2ZfysmhaOO60flJNDeDnS/317iIq6Uy7e8J8LfaC', '2022-10-31 22:18:20.000000', '2022-10-31 22:18:20.000000'),
+(6, 'nour', 'nour@gmail.com', '$2y$10$oVEGiVcTu1vwac9YAjUee.H1t77nLNm1EImQe8S8eygI6MTYOr3ee', '2022-11-01 08:37:06.000000', '2022-11-01 08:37:06.000000');
 
 -- --------------------------------------------------------
 
@@ -359,7 +366,7 @@ CREATE TABLE IF NOT EXISTS `teacher` (
   `created_at` timestamp(6) NOT NULL,
   `updated_at` timestamp(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `teacher`
